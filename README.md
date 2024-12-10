@@ -104,6 +104,7 @@ The API developer should not make this decision - it is a product / client quest
 # What changes would be needed for Production
 - Serving on HTTPS and the associated certificate management
 - Middleware for things like Authentication and OpenTelemetry, etc.
+- Versioning the API to help with future governance. For example including "/v1/" in the URL
 - A health end point to support external scaling orchestration like Kubernetes
 - freeze versions of dependencies
 - observability tooling
