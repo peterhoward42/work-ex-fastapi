@@ -16,13 +16,13 @@ The code has been developed and tested on Python 3.13.0.
 ```
 mkdir foo
 cd foo
-git clone  git@github.com:peterhoward42/workex24.git
-cd workex24
+git clone git@github.com:peterhoward42/work-ex-fastapi.git
+cd work-ex-fastapi
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 pip install -r requirements.txt
-python migrate.py
+python migrate_db.py
 
 ```
 
