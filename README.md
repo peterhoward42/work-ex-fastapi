@@ -35,6 +35,17 @@ so the tests will create amd use an SQLite file-based database at ./database.db
 make test
 ```
 
+# Configuring the API to use an external database
+
+By default the API creates and interacts with a local SQLite database - which lives
+in a local `./database.db` file.
+
+You can alternatively specify an external (pre-existing) database connection URL using the `DATABASE_URL` environment variable.
+
+For example:
+
+```export DATABASE_URL="postgresql+psycopg2://user:password@hostname/database_name'"```
+
 # Launching the service locally and interacting with it
 
 ```
@@ -68,13 +79,6 @@ You should see the set of transactions loaded by a POST request
 to `/transactions`, and then a net income summary from the GET request
 to `/report`.
 
-# Configuring the API to use an external database.
-
-You specify the database connection URL in the DATABASE_URL environment variable.
-
-For example:
-
-```export DATABASE_URL="postgresql+psycopg2://user:password@hostname/database_name'"```
 
 # Assumptions Made
 - That each POST of a set of transactions is intended to overwrite any previously saved transactions. (If not it raises questions about: keying them perhaps to one tax year, managing accidental duplication, and how the report would need to be changed)
